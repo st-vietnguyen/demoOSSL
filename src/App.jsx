@@ -1,4 +1,12 @@
 import { useState, useEffect } from 'react';
+import _ from 'lodash';
+import axios from 'axios';
+import { format } from 'date-fns';
+
+// Use the imports to ensure they are bundled (for license extraction)
+console.log('Lodash version:', _.VERSION);
+console.log('Axios version:', axios.VERSION);
+console.log('Current date:', format(new Date(), 'yyyy-MM-dd'));
 
 function App() {
     const [licenses, setLicenses] = useState([]);
@@ -43,6 +51,7 @@ function App() {
                         <th>Name</th>
                         <th>Version</th>
                         <th>Publisher</th>
+                        <th>Description</th>
                     </tr>
                 </thead>
                 <tbody>

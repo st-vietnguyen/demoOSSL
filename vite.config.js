@@ -8,9 +8,9 @@ import fs from 'fs';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Load only deps from package.json
+// Load only deps from package.json (production deps)
 const pkgJson = JSON.parse(fs.readFileSync('./package.json', 'utf-8'));
-const allowedDeps = Object.keys(pkgJson.dependencies || {});
+const productionDeps = Object.keys(pkgJson.dependencies || {});
 
 export default defineConfig({
   plugins: [
@@ -21,9 +21,8 @@ export default defineConfig({
         output: {
           file: path.join(__dirname, 'dist', 'oss-license.json'),
           template(dependencies) {
-            // filter only deps declared in package.json
             const filtered = dependencies.filter(dep =>
-              allowedDeps.includes(dep.name)
+              productionDeps.includes(dep.name)
             );
 
             const licenseData = filtered.map(dep => ({
