@@ -133,10 +133,7 @@ The generated `oss-license.json` contains an array of objects:
     "name": "react",
     "version": "18.2.0",
     "licenses": "MIT",
-    "repository": "https://github.com/facebook/react",
     "licenseText": "MIT License\n\nCopyright (c) Meta Platforms...",
-    "author": "Meta Platforms, Inc.",
-    "description": "React is a JavaScript library for building user interfaces."
   }
 ]
 ```

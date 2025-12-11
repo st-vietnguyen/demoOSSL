@@ -30,7 +30,7 @@ export default defineConfig({
               name: dep.name || 'Unknown',
               version: dep.version || 'Unknown',
               publisher: dep.publisher || 'Unknown',
-              license: dep.license || 'Unknown',
+              licenseText: dep.licenseText || 'Unknown',
             }));
 
             return JSON.stringify(licenseData, null, 2);
